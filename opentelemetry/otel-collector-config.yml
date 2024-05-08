@@ -6,7 +6,7 @@ receivers:
 
 exporters:
   debug:
-    verbosity: detailed
+    verbosity: normal
   otlp/elastic:
     endpoint: "http://localhost:4317" # Elastic APM Server 으로 수정해야함.
 
@@ -14,4 +14,4 @@ service:
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [debug, otlp/elastic]
+      exporters: [debug]

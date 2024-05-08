@@ -1,0 +1,39 @@
+{
+  "name": "core-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "NODE_ENV=development ts-node-dev --files --respawn -r dotenv/config --transpile-only ./src/app.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^12.0.1",
+    "@opentelemetry/api": "^1.8.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.46.0",
+    "@opentelemetry/exporter-metrics-otlp-http": "^0.51.1",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.51.1",
+    "@opentelemetry/instrumentation": "^0.51.1",
+    "@opentelemetry/resources": "^1.24.1",
+    "@opentelemetry/sdk-metrics": "^1.24.1",
+    "@opentelemetry/sdk-node": "^0.51.1",
+    "@opentelemetry/sdk-trace-base": "^1.24.1",
+    "@opentelemetry/sdk-trace-node": "^1.24.1",
+    "@opentelemetry/semantic-conventions": "^1.24.1",
+    "@types/confidence": "^1.4.34",
+    "@types/koa": "^2.15.0",
+    "@types/koa__router": "^12.0.4",
+    "@types/node": "^20.12.10",
+    "@types/uuid": "^9.0.8",
+    "axios": "^1.6.8",
+    "confidence": "^5.0.1",
+    "dotenv": "^16.4.5",
+    "koa": "^2.15.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5",
+    "uuid": "^9.0.1"
+  }
+}
