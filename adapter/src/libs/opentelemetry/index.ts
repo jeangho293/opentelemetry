@@ -6,11 +6,12 @@ import {
   SEMRESATTRS_SERVICE_NAME,
   SEMRESATTRS_SERVICE_VERSION,
 } from "@opentelemetry/semantic-conventions";
+import { KoaLayerType } from "@opentelemetry/instrumentation-koa";
 import { v4 as uuid } from "uuid";
 
 const sdk = new NodeSDK({
   resource: new Resource({
-    [SEMRESATTRS_SERVICE_NAME]: "theo-core-api",
+    [SEMRESATTRS_SERVICE_NAME]: "theo-adapter",
     [SEMRESATTRS_SERVICE_VERSION]: "1.0",
   }),
   traceExporter: new OTLPTraceExporter({
@@ -21,15 +22,6 @@ const sdk = new NodeSDK({
     getNodeAutoInstrumentations({
       "@opentelemetry/instrumentation-fs": {
         enabled: false,
-      },
-      "@opentelemetry/instrumentation-net": {
-        enabled: false,
-      },
-      "@opentelemetry/instrumentation-koa": {
-        requestHook: (span, ctx) => {
-          console.log(ctx.layerType);
-          console.log(ctx.middlewareLayer);
-        },
       },
     }),
   ],

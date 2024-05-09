@@ -11,9 +11,13 @@ exporters:
     endpoint: "http://zipkin:9411/api/v2/spans"
     tls:
       insecure: true
+  otlp/elastic:
+    endpoint: "http://host.docker.internal:59110"
+    tls:
+      insecure: true
 
 service:
   pipelines:
     traces:
       receivers: [otlp]
-      exporters: [debug, zipkin]
+      exporters: [debug, zipkin, otlp/elastic]
