@@ -4,7 +4,7 @@ services:
   optl:
     image: otel/opentelemetry-collector-contrib
     volumes:
-      - ./opentelemetry/otel-collector-config.yml:/etc/otelcol-contrib/config.yml
+      - ./opentelemetry/otel-collector-config.yaml:/etc/otelcol-contrib/config.yaml # yaml로 해야 override 가능
     ports:
       - 4318:4318 # OTLP http receiver
 

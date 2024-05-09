@@ -6,11 +6,7 @@ receivers:
 
 exporters:
   debug:
-    verbosity: normal
-  otlp/elastic:
-    endpoint: "http://localhost:4317" # Elastic APM Server 으로 수정해야함.
-    tls:
-      insecure: true
+    verbosity: detailed
   zipkin:
     endpoint: "http://zipkin:9411/api/v2/spans"
     tls:
