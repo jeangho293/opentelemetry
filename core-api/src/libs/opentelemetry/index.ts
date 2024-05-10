@@ -25,10 +25,9 @@ const sdk = new NodeSDK({
       "@opentelemetry/instrumentation-net": {
         enabled: false,
       },
-      "@opentelemetry/instrumentation-koa": {
-        requestHook: (span, ctx) => {
-          console.log(ctx.layerType);
-          console.log(ctx.middlewareLayer);
+      "@opentelemetry/instrumentation-winston": {
+        logHook: (span, log) => {
+          log["apm.trace.id"] = span.spanContext().traceId;
         },
       },
     }),

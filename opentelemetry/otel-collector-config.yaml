@@ -12,7 +12,7 @@ exporters:
     tls:
       insecure: true
   otlp/elastic:
-    endpoint: "http://host.docker.internal:59110"
+    endpoint: "http://host.docker.internal:59111"
     tls:
       insecure: true
 
